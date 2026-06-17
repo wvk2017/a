@@ -10,7 +10,7 @@ services:
       - "7030:7030"
       - "9030:9030"
       - "8333:8333"
-    command: "/usr/bin/bitcoind -printtoconsole -server -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7030 -rpcbind=0.0.0.0 -rpcport=9030 -rpcallowip=0.0.0.0/0 -port=8333 -rpcuser=pooluser -rpcpassword=poolpassword -addnode=dnsseed-mainnet.unisat.io -addnode=dnsseed-mainnet.fractalbitcoin.io"
+    command: "/usr/bin/bitcoind -printtoconsole -server -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7030 -rpcbind=0.0.0.0 -rpcport=9030 -rpcallowip=0.0.0.0/0 -port=8333 -rpcuser=pooluser -rpcpassword=poolpassword -dbcache=10000 -addnode=dnsseed-mainnet.unisat.io -addnode=dnsseed-mainnet.fractalbitcoin.io"
     x-casaos:
       volumes:
         - container: /root/.bitcoin
