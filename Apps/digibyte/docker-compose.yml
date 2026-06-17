@@ -6,13 +6,13 @@ services:
     restart: always
     volumes:
       # Mounting docker.sock to allow docker management via the container
-      - /media/ZimaOS-HD/NodeData/dgb:/root/.digibyte
+      - /media/ZimaOS-HD/NodeData/dgb:/root/.Digibyte
     ports:
       - "7001:7001"
       - "9001:9001"
       - "12024:12024"
     entrypoint: /usr/bin/digibyted
-    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword"
+    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword -dbcache=10000"
     x-casaos:
       volumes:
         - container: /root/.digibyte
