@@ -5,7 +5,7 @@ services:
     image: theretromike/nodes:wojak
     restart: always
     volumes:
-      - /media/ZimaOS-HD/wjk:/root/.wojakcoin
+      - /media/ZimaOS-HD/NodeData/wjk:/root/.wojakcoin
     ports:
       - "7017:7017"
       - "9017:9017"
