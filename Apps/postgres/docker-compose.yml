@@ -1,0 +1,35 @@
+name: retro-mike-postgresql
+services:
+  app:
+    container_name: postgresql
+    image: postgres:17.4
+    restart: always
+    volumes:
+      - /media/ZimaOS-HD/postgres:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - PGID=1000
+      - POSTGRES_DB=zimaos
+      - POSTGRES_PASSWORD=P@ssw0rd
+      - POSTGRES_USER=admin
+      - PUID=1000
+      - TZ=America/Chicago
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: app
+  description:
+    en_us: Postgresql Database Engine
+  tagline:
+    en_us: Postgresql Database Engine
+  developer: Retro Mike
+  author: Retro Mike
+  icon: https://cdn.jsdelivr.net/gh/IceWhaleTech/CasaOS-AppStore@main/Apps/PostgreSQL/icon.png
+  thumbnail: ""
+  title:
+    en_us: Postgresql
+  category: RetroMike
+  port_map: "8888"
