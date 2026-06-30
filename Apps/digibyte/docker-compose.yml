@@ -12,7 +12,7 @@ services:
       - "9001:9001"
       - "12024:12024"
     entrypoint: /usr/bin/digibyted
-    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword -addnode=oracle1.digibyte.io:12024 -addnode=digihash.digibyte.io:12024 -dbcache=10000 -reindex"
+    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword -addnode=oracle1.digibyte.io:12024 -addnode=digihash.digibyte.io:12024 -dbcache=8000 -txindex=1"
     x-casaos:
       volumes:
         - container: /root/.digibyte
@@ -35,14 +35,14 @@ x-casaos:
   description:
     en_us: wvk2017 Digibyte 9.26.2 Cryptocurrency Node. Can be used in conjunction with Miningcore Apps to solo mine.
   tagline:
-    en_us: Digibyte Cryptocurrency Node.
-  developer: wvk2017
-  author: wvk2017
+    en_us: Digibyte 9.26.2 Cryptocurrency Node.
+  developer: Retro Mike
+  author: Retro Mike
   icon: https://github.com/DigiByte-Core/digibyte-logos/blob/master/Logos%20Bitmap/transparent%20bg/ClearBg%20DigiByte.png?raw=true
   # Thumbnail image for the application (if any)
   thumbnail: ""
   # Title for the application
   title:
     en_us: Digibyte (DGB) Node
-  category: wvk2017
+  category: RetroMike
   port_map: "8888"
