@@ -12,7 +12,7 @@ services:
       - "9001:9001"
       - "12024:12024"
     entrypoint: /usr/bin/digibyted
-    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword -dbcache=10000"
+    command: "-printtoconsole -server -algo=sha256d -prune=550 -wallet=default -zmqpubhashblock=tcp://127.0.0.1:7001 -rpcbind=0.0.0.0 -rpcport=9001 -rpcallowip=0.0.0.0/0 -rpcuser=pooluser -rpcpassword=poolpassword -addnode=oracle1.digibyte.io:12024 -addnode=digihash.digibyte.io:12024 -dbcache=10000 -reindex"
     x-casaos:
       volumes:
         - container: /root/.digibyte
